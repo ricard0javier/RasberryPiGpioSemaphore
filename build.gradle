@@ -1,0 +1,28 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+version = '1.0'
+mainClassName = 'com.ricardovz.gpio.semaphore.Application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.projectlombok:lombok:1.16.6'
+    compile 'ch.qos.logback:logback-classic:1.1.5'
+    compile 'com.pi4j:pi4j-core:1.0'
+
+    testCompile 'junit:junit:4.12'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.ricardovz.gpio.semaphore.Application'
+        )
+    }
+}
